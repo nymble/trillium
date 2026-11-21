@@ -59,6 +59,23 @@ fix = os.environ.get("FIX") == "1"
 target = os.environ.get("BUILD", "")
 wtt = os.environ.get("WHAT_TO_TEST", "")
 
+wait_n = os.environ.get("WAIT_PLATFORMS", "")
+if target and wait_n:
+    want = set(wait_n.split(","))
+    for i in range(50):
+        s, b = call("GET", f"/v1/builds?filter[app]={app}&filter[version]={target}&include=preReleaseVersion&limit=10")
+        inc0 = {(x["type"], x["id"]): x for x in b.get("included", [])}
+        ok = set()
+        for x in b.get("data", []):
+            pv = inc0.get(("preReleaseVersions", (x["relationships"]["preReleaseVersion"]["data"] or {}).get("id")), {})
+            if x["attributes"].get("processingState") == "VALID":
+                ok.add(pv.get("attributes", {}).get("platform"))
+        print(f"wait {i}: build {target} valid on {sorted(p for p in ok if p)}", flush=True)
+        if want <= ok:
+            break
+        time.sleep(60)
+    TOK = token()
+
 s, builds = call("GET", f"/v1/builds?filter[app]={app}&sort=-uploadedDate&limit=20"
                  "&include=preReleaseVersion,buildBetaDetail,betaGroups")
 if s != 200:

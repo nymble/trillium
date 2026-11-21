@@ -14,6 +14,7 @@ permissions:
 jobs:
   status:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,6 +29,7 @@ jobs:
           FIX: "1"
           EXTERNAL_GROUP: "Trillium"
           SUBMIT_BETA_REVIEW: "1"
-          BUILD: "4"
-          WHAT_TO_TEST: "Handpan instrument view (prototype): Presets > Handpan instrument (prototype) > Open instrument view. The view reads motion data over USB. Bluetooth MIDI pairing: Settings > Bluetooth MIDI (needs the BLE-MIDI firmware and a battery); Bluetooth carries instrument MIDI only."
+          BUILD: "5"
+          WAIT_PLATFORMS: "IOS,MAC_OS"
+          WHAT_TO_TEST: "0.8.0 (5): app-generated MIDI from the handpan instrument view now works on iPhone and iPad (the Trillium Instrument MIDI source no longer fails with -10844). Open it from Presets > Handpan instrument (prototype) > Open instrument view, turn on App-generated MIDI and pick Trillium Instrument in a music app. The view needs the board on USB for motion data. Bluetooth MIDI test: install the BLE-MIDI firmware (xiao-sense-fw-ble-midi-0.8.0.uf2) on a board with a battery, then Settings > Bluetooth MIDI. Bluetooth carries the board instrument MIDI only."
         run: python3 tools/asc_testflight_status.py
