@@ -9,6 +9,9 @@ All notable changes to this project are documented here. Versions follow [Semant
 - **Startup intro:** the Light trails rose curves (r = cos 3θ) draw themselves, then the lockup appears, in 1.2 s or less. Tap to skip. With Reduce Motion the intro appears without drawing. The Rhodonea mark itself is not animated.
 - `docs/design-themes.md`: a design note on alternate accents for people who dislike orange, and on clarity in dark venues (not implemented).
 
+### Fixed
+- **Instrument view on iPhone and iPad:** turning on App-generated MIDI failed with "CoreMIDI MIDISourceCreateWithProtocol failed (OSStatus -10844)". iOS returns `kMIDINotPermitted` for a virtual MIDI source unless the app declares the `audio` background mode; the iOS Info.plist now does (`UIBackgroundModes`), and a tools test checks it. CoreMIDI failures now name the error (for example `kMIDINotPermitted`) with a short hint, and the instrument view says that motion data needs USB.
+
 ## [0.8.0] - 2026-11-19
 
 ### Added

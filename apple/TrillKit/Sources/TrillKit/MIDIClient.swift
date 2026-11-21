@@ -37,7 +37,7 @@ public final class MIDIClient {
     public struct Failure: Error, LocalizedError {
         public let call: String
         public let status: OSStatus
-        public var errorDescription: String? { "CoreMIDI \(call) failed (OSStatus \(status))" }
+        public var errorDescription: String? { MIDIStatusText.failure(call: call, status: status) }
     }
 
     /// Instrument messages from the monitor source.

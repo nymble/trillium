@@ -95,7 +95,7 @@ private struct InstrumentStatusLine: View {
 
     private var statusText: String {
         var parts: [String] = []
-        parts.append(live ? (snapshot.readout.gravityValid ? "Motion live" : "Waiting for motion data") : "Not connected: connect on Home to see live motion")
+        parts.append(live ? (snapshot.readout.gravityValid ? "Motion live" : "Waiting for motion data") : "Not connected: connect the board over USB on Home (motion data does not travel over Bluetooth)")
         parts.append(midiOn ? "Playing to \(AppMIDISource.defaultName), channel \(prefs.channel + 1)" : "App-generated MIDI off")
         return parts.joined(separator: " · ")
     }
