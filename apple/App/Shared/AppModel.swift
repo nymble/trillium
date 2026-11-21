@@ -92,6 +92,10 @@ final class AppModel: ObservableObject {
     @Published var instrumentMIDIError: String?
     var appMIDISource: AppMIDISource?
     var instrumentDemo: InstrumentDemo?
+    #if os(iOS)
+    /// Silent mixable audio so iOS keeps the app running while app-generated MIDI is on.
+    let keepAlive = SilentAudioKeepAlive()
+    #endif
 
     // Navigation
     @Published var tab: AppTab = .home
@@ -164,6 +168,9 @@ final class AppModel: ObservableObject {
             midiError = error.localizedDescription
         }
         refreshEndpoints()
+        // App-generated MIDI stays on across launches, so music apps opened
+        // later find the "Trillium Instrument" source without a refresh.
+        if AppMIDIPreference().isOn { setInstrumentMIDI(true) }
         startDriveWatch()
         // 30 Hz UI drain + 10 Hz-or-better timeout checks.
         timer = Timer.scheduledTimer(withTimeInterval: 1.0 / 30, repeats: true) { [weak self] _ in

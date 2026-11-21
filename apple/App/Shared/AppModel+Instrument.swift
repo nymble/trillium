@@ -55,6 +55,16 @@ extension AppModel {
             instrument.send = nil
             appMIDISource = nil
         }
+        AppMIDIPreference().isOn = appMIDISource != nil
+        #if os(iOS)
+        // Without running audio iOS suspends the app soon after the user
+        // switches to a synth or monitor, and no notes are sent.
+        keepAlive.setActive(appMIDISource != nil)
+        if appMIDISource != nil, !keepAlive.isRunning {
+            instrumentMIDIError = "Could not keep running in the background" + (keepAlive.lastError.map { ": \($0)" } ?? "")
+                + ". Notes play only while Trillium is on screen."
+        }
+        #endif
         refreshEndpoints()
     }
 

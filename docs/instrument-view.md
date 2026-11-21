@@ -4,7 +4,7 @@ The instrument view turns Trillium into a handpan you play by striking the senso
 
 It's a prototype. Detection runs **in the app** from the board's telemetry, and the notes come out of the app's own MIDI source. No firmware change is needed, and the board's own MIDI keeps working as before.
 
-- On iPhone and iPad the app's MIDI source needs the `audio` entry in `UIBackgroundModes` (iOS refuses virtual sources with `kMIDINotPermitted`, -10844, without it). The app plays no audio in the background.
+- On iPhone and iPad the app's MIDI source needs the `audio` entry in `UIBackgroundModes` (iOS refuses virtual sources with `kMIDINotPermitted`, -10844, without it). The key alone does not keep the app running: iOS suspends it soon after you switch to a synth or MIDI monitor, and then no telemetry is read, the board's 5 s telemetry lease lapses and no notes are sent. So while App-generated MIDI is on, the iOS app keeps a mixable playback session with an engine rendering silence at volume 0 (`SilentAudioKeepAlive`, restarted after interruptions and audio resets). The switch is remembered across launches, so the source exists from launch and music apps opened later list it.
 - Open it from **Presets › Handpan instrument (prototype) › Open instrument view**. It's optional and changes nothing else.
 - Code: `apple/TrillKit/Sources/TrillKit/ImpulseEngine.swift` (detection), `Handpan.swift` (scales), `InstrumentRunner.swift` (engine to MIDI notes), `AppMIDISource.swift` (the app's MIDI source), and in the app `InstrumentView.swift` and `AppModel+Instrument.swift`.
 - Tests: `apple/TrillKit/Tests/TrillKitTests/InstrumentTests.swift`, which use synthetic IMU traces.

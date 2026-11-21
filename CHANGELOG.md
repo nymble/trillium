@@ -10,6 +10,7 @@ All notable changes to this project are documented here. Versions follow [Semant
 - `docs/design-themes.md`: a design note on alternate accents for people who dislike orange, and on clarity in dark venues (not implemented).
 
 ### Fixed
+- **Instrument view on iPhone and iPad, no notes in other apps:** with App-generated MIDI on, nothing reached a synth or MIDI monitor in another app. iOS suspended Trillium soon after the switch (the `audio` background mode only keeps an app running while audio plays), so telemetry stopped being read, the board's telemetry lease lapsed and no strikes were played. While App-generated MIDI is on, the iOS app now keeps a mixable, silent playback session running (`SilentAudioKeepAlive`, restarted after interruptions and audio resets). The switch is remembered across launches so the "Trillium Instrument" source exists from launch. New `KeepAliveController` and `AppMIDIPreference` tests.
 - **Instrument view on iPhone and iPad:** turning on App-generated MIDI failed with "CoreMIDI MIDISourceCreateWithProtocol failed (OSStatus -10844)". iOS returns `kMIDINotPermitted` for a virtual MIDI source unless the app declares the `audio` background mode; the iOS Info.plist now does (`UIBackgroundModes`), and a tools test checks it. CoreMIDI failures now name the error (for example `kMIDINotPermitted`) with a short hint, and the instrument view says that motion data needs USB.
 
 ## [0.8.0] - 2026-11-19
