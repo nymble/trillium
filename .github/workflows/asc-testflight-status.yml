@@ -29,7 +29,7 @@ jobs:
           FIX: "1"
           EXTERNAL_GROUP: "Trillium"
           SUBMIT_BETA_REVIEW: "1"
-          BUILD: "5"
+          BUILD: "6"
           WAIT_PLATFORMS: "IOS,MAC_OS"
-          WHAT_TO_TEST: "0.8.0 (5): app-generated MIDI from the handpan instrument view now works on iPhone and iPad (the Trillium Instrument MIDI source no longer fails with -10844). Open it from Presets > Handpan instrument (prototype) > Open instrument view, turn on App-generated MIDI and pick Trillium Instrument in a music app. The view needs the board on USB for motion data. Bluetooth MIDI test: install the BLE-MIDI firmware (xiao-sense-fw-ble-midi-0.8.0.uf2) on a board with a battery, then Settings > Bluetooth MIDI. Bluetooth carries the board instrument MIDI only."
+          WHAT_TO_TEST: "0.8.0 (6): on iPhone and iPad, app-generated MIDI from the handpan instrument view now keeps playing while you are in the synth or MIDI monitor app. Trillium keeps running in the background with silent audio (volume 0, mixed with other apps) while App-generated MIDI is on. The switch is remembered, so the Trillium Instrument source exists from launch; if a music app was already open, refresh its MIDI inputs. Open the view from Presets > Handpan instrument (prototype) > Open instrument view; it needs the board on USB for motion data. Bluetooth MIDI test: BLE-MIDI firmware on a board with a battery, then Settings > Bluetooth MIDI."
         run: python3 tools/asc_testflight_status.py
