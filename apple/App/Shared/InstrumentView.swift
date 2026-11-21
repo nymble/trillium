@@ -463,12 +463,18 @@ struct InstrumentControls: View {
                     Text("Channel \(model.instrumentPrefs.channel + 1)").font(.callout.monospaced())
                 }
                 slider("Note length", $model.instrumentPrefs.gate, 0.05...2, step: 0.05) { String(format: "%.2f s", $0) }
-                Text("Music apps see a source named \u{201C}\(AppMIDISource.defaultName)\u{201D}. Notes come from motion data sent over USB at \(InstrumentPrefs.telemetryRateHz) Hz, so they arrive about 10–40 ms after the strike. Pick a preset without strikes, or ignore Trillium's own port, to avoid doubled notes.")
+                Text("Music apps see a source named \u{201C}\(AppMIDISource.defaultName)\u{201D}. Notes come from motion data sent over USB at \(InstrumentPrefs.telemetryRateHz) Hz, so they arrive about 10–40 ms after the strike. Pick a preset without strikes, or ignore Trillium's own port, to avoid doubled notes." + Self.backgroundNote)
                     .font(.caption).foregroundStyle(Color.Trillium.ash)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
     }
+
+    #if os(iOS)
+    static let backgroundNote = " While this is on, Trillium keeps running in the background (silent audio, mixed with other apps) so you can switch to a synth or MIDI monitor. If a music app was already open, refresh its MIDI inputs or reopen it to see the source."
+    #else
+    static let backgroundNote = ""
+    #endif
 
     private func axisName(_ up: UpAxis) -> String {
         let f = up.forward
