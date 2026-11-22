@@ -90,6 +90,8 @@ final class AppModel: ObservableObject {
     /// The instrument view is on screen (telemetry at the instrument rate).
     @Published var instrumentVisible = false
     @Published var instrumentMIDIError: String?
+    /// Last Reconnect MIDI or routing change, for the Output section.
+    @Published var instrumentMIDIStatus: String?
     var appMIDISource: AppMIDISource?
     var instrumentDemo: InstrumentDemo?
     #if os(iOS)
@@ -209,6 +211,9 @@ final class AppModel: ObservableObject {
             sessionRevision += 1
         }
         applyMonitorSource()
+        // Direct sends follow setup changes: a chosen synth input that
+        // appears (app launched) or vanishes is picked up here.
+        applyInstrumentRoutes()
         if let id = configSourceID { _ = c.setConfigSource(sources.contains { $0.id == id } ? id : nil) }
         if autoConnect || install.reconnects, trillDetected, session.phase == .disconnected { connectToDetected() }
     }

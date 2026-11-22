@@ -4,7 +4,10 @@
 // own MIDI source, and a synthetic motion demo for screenshots.
 
 import Foundation
+import os
 import TrillKit
+
+private let midiLog = Logger(subsystem: "net.nymbus.trillium", category: "app-midi")
 
 /// Instrument view choices, saved on this device.
 struct InstrumentPrefs: Codable, Equatable {
@@ -48,6 +51,7 @@ extension AppModel {
                 appMIDISource = src
                 instrument.send = { [weak src] bytes in _ = src?.send(bytes) }
                 instrumentMIDIError = nil
+                midiLog.info("app MIDI source created")
             } catch {
                 instrumentMIDIError = error.localizedDescription
             }
@@ -66,6 +70,64 @@ extension AppModel {
         }
         #endif
         refreshEndpoints()
+    }
+
+    // MARK: Routing and Reconnect MIDI
+
+    /// Destinations that can get direct sends (not the board, online, unique).
+    var directCandidates: [AppMIDIRouting.Candidate] {
+        AppMIDIRouting.candidates(destinations.map {
+            AppMIDIRouting.Candidate(id: $0.id, title: $0.title, isTrill: $0.isTrill, isOffline: $0.isOffline)
+        })
+    }
+
+    var directSelection: Set<String> { AppMIDIRoutingPreference().direct }
+
+    func setDirect(_ title: String, _ on: Bool) {
+        var sel = AppMIDIRoutingPreference().direct
+        if on { sel.insert(title) } else { sel.remove(title) }
+        AppMIDIRoutingPreference().direct = sel
+        objectWillChange.send()
+        applyInstrumentRoutes()
+    }
+
+    var sendToAppSource: Bool {
+        get { AppMIDIRoutingPreference().toSource }
+        set { AppMIDIRoutingPreference().toSource = newValue; objectWillChange.send(); applyInstrumentRoutes() }
+    }
+
+    /// Point the app's MIDI output at the source and the chosen destinations
+    /// that are present now. Called on every MIDI setup change.
+    func applyInstrumentRoutes() {
+        guard let src = appMIDISource else { return }
+        let pref = AppMIDIRoutingPreference()
+        let targets = AppMIDIRouting.targets(selected: pref.direct, among: directCandidates)
+        src.setRoutes(toSource: pref.toSource, direct: targets.map(\.id))
+    }
+
+    /// Reconnect MIDI: notes off through the current routes, then a new
+    /// source and client, routes applied again and notes off once more so
+    /// a synth that kept a note hanging is cleared.
+    func reconnectInstrumentMIDI() {
+        let channels = (appMIDISource?.channels.channels ?? []).union([instrumentPrefs.channel])
+        appMIDISource?.allNotesOff(channels: channels)
+        instrument.send = nil
+        appMIDISource = nil
+        setInstrumentMIDI(true)
+        guard let src = appMIDISource else {
+            instrumentMIDIStatus = "Reconnect failed" + (instrumentMIDIError.map { ": \($0)" } ?? "")
+            midiLog.error("reconnect failed")
+            return
+        }
+        src.allNotesOff(channels: channels)
+        let pref = AppMIDIRoutingPreference()
+        let n = AppMIDIRouting.targets(selected: pref.direct, among: directCandidates).count
+        let time = Date().formatted(date: .omitted, time: .standard)
+        var parts = [pref.toSource ? "\(AppMIDISource.defaultName) recreated" : "\(AppMIDISource.defaultName) recreated (muted)"]
+        if n > 0 { parts.append("direct to \(n) destination\(n == 1 ? "" : "s")") }
+        parts.append("notes off on channel \(channels.sorted().map { String($0 + 1) }.joined(separator: ", "))")
+        instrumentMIDIStatus = "Reconnected \(time): " + parts.joined(separator: ", ")
+        midiLog.info("reconnected: \(parts.joined(separator: ", "), privacy: .public)")
     }
 
     func instrumentPrefsChanged(from old: InstrumentPrefs) {
