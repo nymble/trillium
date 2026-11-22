@@ -9,6 +9,16 @@ It's a prototype. Detection runs **in the app** from the board's telemetry, and 
 - Code: `apple/TrillKit/Sources/TrillKit/ImpulseEngine.swift` (detection), `Handpan.swift` (scales), `InstrumentRunner.swift` (engine to MIDI notes), `AppMIDISource.swift` (the app's MIDI source), and in the app `InstrumentView.swift` and `AppModel+Instrument.swift`.
 - Tests: `apple/TrillKit/Tests/TrillKitTests/InstrumentTests.swift`, which use synthetic IMU traces.
 
+## MIDI output: Reconnect MIDI and direct sends
+
+Music apps list virtual sources when they start or rescan. If an app misses "Trillium Instrument" (it was created later, or the app ignored the setup change), nothing plays until the app is restarted. The Output section has two remedies:
+
+- **Reconnect MIDI** sends All Sound Off (CC120) and All Notes Off (CC123) on every channel used so far and the current one, removes the source and its client, creates them again, applies the routes and sends notes off once more. Apps see the source leave and come back, which prompts most of them to list it again. The result is shown under the button and logged (subsystem `net.nymbus.trillium`, category `app-midi`).
+- **Also send directly to** lists the other apps' MIDI inputs (for example "Logic Pro Virtual In", or a synth's own virtual input). Notes picked here go straight to that input through an output port and don't depend on the app finding the source. The list follows MIDI setup changes: when the app quits and reopens, its input is picked up again by name.
+- **Why direct sends are off by default:** an app that also listens to "Trillium Instrument" would get every note twice. Pick a direct input only for an app that missed the source, or turn off **Send to "Trillium Instrument"** for apps that listen to every input. The board's own ports are never offered.
+- **Automatic part:** on every setup change the direct routes are applied again (safe: nothing is created or removed). The source itself is only recreated when you press Reconnect MIDI, because removing it makes apps drop their connection to it.
+- Code: `AppMIDIRouting.swift` (choice, dedupe, notes off; tested on Linux too), `AppMIDISource.swift` (source, output port, routes), tests in `AppMIDIRoutingTests.swift`.
+
 ## Handpan scales
 
 Each scale is stored exactly as published: the ding, then the tone fields from low to high. You can move it to any ding from E2 to A3. Intervals are kept, and so is the spelling (one letter per step, so D Kurd moved to E reads B C D E F♯ G A B).

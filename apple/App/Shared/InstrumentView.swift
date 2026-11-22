@@ -459,6 +459,16 @@ struct InstrumentControls: View {
                 if let e = model.instrumentMIDIError {
                     Text(e).font(.caption).foregroundStyle(Color.Trillium.amber)
                 }
+                if model.instrumentMIDIOn {
+                    Button("Reconnect MIDI") { model.reconnectInstrumentMIDI() }
+                        .buttonStyle(.trilliumSecondary).font(.callout)
+                        .accessibilityHint("Sends notes off, then recreates the Trillium Instrument source")
+                    if let st = model.instrumentMIDIStatus {
+                        Text(st).font(.caption).foregroundStyle(Color.Trillium.ashLight)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    DirectRoutingControls()
+                }
                 Stepper(value: $model.instrumentPrefs.channel, in: 0...15) {
                     Text("Channel \(model.instrumentPrefs.channel + 1)").font(.callout.monospaced())
                 }
@@ -511,6 +521,34 @@ struct InstrumentControls: View {
             }
             Slider(value: value, in: range, step: step).accessibilityLabel(title)
                 .tint(Color.Trillium.ashLight)
+        }
+    }
+}
+
+/// Where app-generated MIDI goes besides the virtual source. Opt-in: an
+/// app that also listens to the source would otherwise get notes twice.
+private struct DirectRoutingControls: View {
+    @EnvironmentObject var model: AppModel
+
+    var body: some View {
+        let candidates = model.directCandidates
+        let selected = model.directSelection
+        VStack(alignment: .leading, spacing: 6) {
+            Toggle("Send to \u{201C}\(AppMIDISource.defaultName)\u{201D}", isOn: Binding(
+                get: { model.sendToAppSource }, set: { model.sendToAppSource = $0 }))
+                .font(.callout)
+            Text("Also send directly to").font(.callout)
+            if candidates.isEmpty {
+                Text("No other MIDI inputs right now. Open the music app, and its input appears here.")
+                    .font(.caption).foregroundStyle(Color.Trillium.ash)
+            }
+            ForEach(candidates, id: \.self) { c in
+                Toggle(c.title, isOn: Binding(get: { selected.contains(c.title) }, set: { model.setDirect(c.title, $0) }))
+                    .font(.callout)
+            }
+            Text("Direct sends reach an app even if it missed the source. If that app also listens to \u{201C}\(AppMIDISource.defaultName)\u{201D}, turn one of them off to avoid doubled notes. The choice is remembered and follows the app when it quits and reopens.")
+                .font(.caption).foregroundStyle(Color.Trillium.ash)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 }
