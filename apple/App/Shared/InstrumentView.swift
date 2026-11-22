@@ -463,6 +463,12 @@ struct InstrumentControls: View {
                     Button("Reconnect MIDI") { model.reconnectInstrumentMIDI() }
                         .buttonStyle(.trilliumSecondary).font(.callout)
                         .accessibilityHint("Sends notes off, then recreates the Trillium Instrument source")
+                    Button("Send test note") { model.sendInstrumentTestNote() }
+                        .buttonStyle(.trilliumSecondary).font(.callout)
+                        .accessibilityHint("Plays the ding once through the current routes")
+                    Text(model.instrumentMIDIStats.summary(now: MIDIClient.now()))
+                        .font(.caption.monospaced()).foregroundStyle(Color.Trillium.ashLight)
+                        .accessibilityLabel("App-generated MIDI counters")
                     if let st = model.instrumentMIDIStatus {
                         Text(st).font(.caption).foregroundStyle(Color.Trillium.ashLight)
                             .fixedSize(horizontal: false, vertical: true)
@@ -560,7 +566,10 @@ struct InstrumentEntryCard: View {
     var body: some View {
         HStack(alignment: .center, spacing: 14) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Handpan instrument (prototype)").font(.headline)
+                HStack(spacing: 6) {
+                    Text("Handpan instrument (prototype)").font(.headline)
+                    if selected { Image(systemName: "checkmark.circle.fill").foregroundStyle(Color.Trillium.signal) }
+                }
                 Text("Strike the sensor on a stick or a string in 8 directions to play a handpan scale; tilt for more notes. Feedback and settings on one screen.")
                     .font(.callout).foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -571,5 +580,10 @@ struct InstrumentEntryCard: View {
         }
         .padding(16)
         .background(RoundedRectangle(cornerRadius: 20).fill(Color.Trillium.graphite))
+        // Selected like a preset card: the handpan is playing (App-generated MIDI on).
+        .overlay(RoundedRectangle(cornerRadius: 20).stroke(selected ? Color.Trillium.signal : .clear, lineWidth: 2))
+        .accessibilityAddTraits(selected ? .isSelected : [])
     }
+
+    private var selected: Bool { model.instrumentMIDIOn }
 }

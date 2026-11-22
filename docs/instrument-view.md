@@ -19,6 +19,14 @@ Music apps list virtual sources when they start or rescan. If an app misses "Tri
 - **Automatic part:** on every setup change the direct routes are applied again (safe: nothing is created or removed). The source itself is only recreated when you press Reconnect MIDI, because removing it makes apps drop their connection to it.
 - Code: `AppMIDIRouting.swift` (choice, dedupe, notes off; tested on Linux too), `AppMIDISource.swift` (source, output port, routes), tests in `AppMIDIRoutingTests.swift`.
 
+## Checking the synth side
+
+The Output section counts what leaves Trillium: notes sent, messages taken by the "Trillium Instrument" source, messages delivered to direct destinations, failures, and how long ago the last note went out. **Send test note** plays the ding once through the same routes, without striking.
+
+- Moving sensor graphs don't mean notes: a note is sent only when a strike crosses the threshold (the ring's sector lights and the last hit is outlined). The counter shows whether that happened.
+- If the counter goes up and the synth stays silent, the synth isn't taking the notes. On iPhone the synth is in the background while Trillium is on screen, so it has to keep running there: in AudioKit Synth One and similar apps, turn on their background audio setting, and enable "Trillium Instrument" (or pick the synth under Also send directly to) as its MIDI input. Without background audio iOS suspends the synth, and it plays nothing until it is on screen again.
+- On the Presets screen the Handpan card is outlined, like a selected preset, while App-generated MIDI is on.
+
 ## Handpan scales
 
 Each scale is stored exactly as published: the ding, then the tone fields from low to high. You can move it to any ding from E2 to A3. Intervals are kept, and so is the spelling (one letter per step, so D Kurd moved to E reads B C D E F♯ G A B).

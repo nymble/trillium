@@ -23,13 +23,16 @@ public final class AppMIDISource: @unchecked Sendable {
     public let name: String
     /// Channels used since creation (for notes off on reconnect).
     public let channels = MIDIChannelTracker()
+    /// Delivery counters (shared across Reconnect MIDI when passed in).
+    public let counters: AppMIDICounters
 
     private let lock = NSLock()
     private var direct: [MIDIEndpointRef] = []
     private var toSource = true
 
-    public init(name: String = AppMIDISource.defaultName) throws {
+    public init(name: String = AppMIDISource.defaultName, counters: AppMIDICounters = AppMIDICounters()) throws {
         self.name = name
+        self.counters = counters
         var status = MIDIClientCreateWithBlock("\(name) Client" as CFString, &client) { _ in }
         guard status == noErr else { throw MIDIClient.Failure(call: "MIDIClientCreateWithBlock", status: status) }
         status = MIDISourceCreateWithProtocol(client, name as CFString, ._1_0, &source)
@@ -88,10 +91,11 @@ public final class AppMIDISource: @unchecked Sendable {
         var w = word
         guard MIDIEventListAdd(list, size, packet, 0, 1, &w) != nil else { return false }
         lock.lock(); let src = toSource, eps = direct; lock.unlock()
-        var ok = false
-        if src { ok = MIDIReceivedEventList(source, list) == noErr || ok }
-        for ep in eps { ok = MIDISendEventList(outPort, ep, list) == noErr || ok }
-        return ok
+        let sourceOK: Bool? = src ? MIDIReceivedEventList(source, list) == noErr : nil
+        var directOK = 0
+        for ep in eps where MIDISendEventList(outPort, ep, list) == noErr { directOK += 1 }
+        counters.record(bytes, at: MIDIClient.now(), sourceOK: sourceOK, directOK: directOK, directFailed: eps.count - directOK)
+        return sourceOK == true || directOK > 0
     }
 
     /// All Sound Off and All Notes Off on the given channels plus every

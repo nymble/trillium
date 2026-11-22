@@ -47,7 +47,7 @@ extension AppModel {
         objectWillChange.send()
         if on, appMIDISource == nil {
             do {
-                let src = try AppMIDISource()
+                let src = try AppMIDISource(counters: instrumentMIDICounters)
                 appMIDISource = src
                 instrument.send = { [weak src] bytes in _ = src?.send(bytes) }
                 instrumentMIDIError = nil
@@ -130,6 +130,16 @@ extension AppModel {
         midiLog.info("reconnected: \(parts.joined(separator: ", "), privacy: .public)")
     }
 
+    /// One short ding through the current routes, to check the synth side
+    /// without striking.
+    func sendInstrumentTestNote() {
+        guard let src = appMIDISource else { return }
+        let ch = UInt8(instrumentPrefs.channel), note = UInt8(max(0, min(127, instrumentPrefs.dingMIDI)))
+        src.send([0x90 | ch, note, 100])
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak src] in src?.send([0x80 | ch, note, 0]) }
+        midiLog.info("test note sent")
+    }
+
     func instrumentPrefsChanged(from old: InstrumentPrefs) {
         guard instrumentPrefs != old else { return }
         instrument.settings = instrumentPrefs.settings
@@ -160,6 +170,10 @@ extension AppModel {
     /// Called from the UI timer.
     func instrumentTick() {
         if let d = instrumentDemo { d.step(until: MIDIClient.now(), runner: instrument) }
+        if instrumentMIDIOn {
+            let st = instrumentMIDICounters.snapshot
+            if st != instrumentMIDIStats { instrumentMIDIStats = st }
+        }
         guard instrumentVisible else { return }
         let s = instrument.snapshot()
         if s != instrumentSnapshot { instrumentSnapshot = s }
