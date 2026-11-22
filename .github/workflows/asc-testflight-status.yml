@@ -26,10 +26,8 @@ jobs:
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
           ASC_APP_ID: "6836153137"
-          FIX: "1"
+          FIX: "0"
           EXTERNAL_GROUP: "Trillium"
-          SUBMIT_BETA_REVIEW: "1"
           BUILD: "7"
-          WAIT_PLATFORMS: "IOS,MAC_OS"
           WHAT_TO_TEST: "0.8.0 (7): Reconnect MIDI and direct sends in the handpan instrument view (Output section, with App-generated MIDI on). Reconnect MIDI sends notes off, recreates the Trillium Instrument source and shows the result under the button. Also send directly to: optional direct sends to app inputs such as Logic Pro Virtual In or Synth One; off by default, turn off Send to Trillium Instrument if notes are doubled. Please test in Logic Pro (Mac) and Synth One (iPhone). The view needs the board on USB."
         run: python3 tools/asc_testflight_status.py
