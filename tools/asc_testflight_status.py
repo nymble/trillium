@@ -88,7 +88,8 @@ gmap = {}
 for g in groups.get("data", []):
     a = g["attributes"]
     gmap[g["id"]] = a["name"]
-    print(f"  {a['name']}: internal={a.get('isInternalGroup')} allBuilds={a.get('hasAccessToAllBuilds')}")
+    print(f"  {a['name']}: internal={a.get('isInternalGroup')} allBuilds={a.get('hasAccessToAllBuilds')} "
+          f"publicLinkEnabled={a.get('publicLinkEnabled')} publicLink={a.get('publicLink')}")
     s2, t = call("GET", f"/v1/betaGroups/{g['id']}/betaTesters?limit=50")
     for x in t.get("data", []):
         ta = x["attributes"]
