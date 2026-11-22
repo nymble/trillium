@@ -99,3 +99,23 @@ final class AppMIDIDirectSendTests: XCTestCase {
     }
 }
 #endif
+
+final class AppMIDICountersTests: XCTestCase {
+    func testCountsNotesRoutesAndFailures() {
+        let c = AppMIDICounters()
+        c.record([0x90, 60, 100], at: 10, sourceOK: true, directOK: 1, directFailed: 0)
+        c.record([0x80, 60, 0], at: 10.4, sourceOK: true, directOK: 1, directFailed: 0)
+        c.record([0x90, 62, 0], at: 11, sourceOK: true, directOK: 0, directFailed: 0)   // note-on velocity 0 = off
+        c.record([0x91, 64, 90], at: 12, sourceOK: nil, directOK: 0, directFailed: 1)  // source muted, direct refused
+        c.record([0x91, 65, 90], at: 13, sourceOK: nil, directOK: 0, directFailed: 0)  // no route at all
+        let s = c.snapshot
+        XCTAssertEqual(s.notes, 3)
+        XCTAssertEqual(s.viaSource, 3)
+        XCTAssertEqual(s.viaDirect, 2)
+        XCTAssertEqual(s.failed, 2)
+        XCTAssertEqual(s.lastNoteAt, 13)
+        XCTAssertEqual(s.summary(now: 16), "Sent 3 notes · source 3 · direct 2 · failed 2 · last 3 s ago")
+        c.reset()
+        XCTAssertEqual(c.snapshot.summary(now: 0), "Sent 0 notes · source 0 · direct 0")
+    }
+}

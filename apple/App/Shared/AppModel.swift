@@ -92,6 +92,9 @@ final class AppModel: ObservableObject {
     @Published var instrumentMIDIError: String?
     /// Last Reconnect MIDI or routing change, for the Output section.
     @Published var instrumentMIDIStatus: String?
+    /// Notes and deliveries of app-generated MIDI (kept across Reconnect MIDI).
+    let instrumentMIDICounters = AppMIDICounters()
+    @Published var instrumentMIDIStats = AppMIDICounters.Snapshot()
     var appMIDISource: AppMIDISource?
     var instrumentDemo: InstrumentDemo?
     #if os(iOS)

@@ -103,3 +103,57 @@ public struct AppMIDIRoutingPreference {
         nonmutating set { defaults.set(newValue, forKey: Self.sourceKey) }
     }
 }
+
+/// Counters for app-generated MIDI, shown in the instrument view so a user
+/// can tell whether notes leave Trillium at all (if they do and the synth
+/// stays silent, the synth is not listening or not running). Thread-safe;
+/// kept across Reconnect MIDI.
+public final class AppMIDICounters: @unchecked Sendable {
+    public struct Snapshot: Equatable, Sendable {
+        /// Note-on messages sent (velocity > 0).
+        public var notes = 0
+        /// Messages the virtual source accepted.
+        public var viaSource = 0
+        /// Messages delivered to direct destinations (one per destination).
+        public var viaDirect = 0
+        /// Messages no route accepted, or a route refused.
+        public var failed = 0
+        /// Host time (seconds) of the last note-on, 0 if none.
+        public var lastNoteAt: Double = 0
+
+        public init() {}
+
+        /// One line for the Output section, e.g. "Sent 12 notes · source 24 · direct 0 · last 3 s ago".
+        public func summary(now: Double) -> String {
+            var s = "Sent \(notes) note\(notes == 1 ? "" : "s") · source \(viaSource) · direct \(viaDirect)"
+            if failed > 0 { s += " · failed \(failed)" }
+            if notes > 0, lastNoteAt > 0 {
+                let ago = max(0, Int((now - lastNoteAt).rounded()))
+                s += " · last \(ago < 60 ? "\(ago) s" : "\(ago / 60) min") ago"
+            }
+            return s
+        }
+    }
+
+    private let lock = NSLock()
+    private var snap = Snapshot()
+
+    public init() {}
+
+    /// Record one message and how it was delivered.
+    public func record(_ bytes: [UInt8], at time: Double, sourceOK: Bool?, directOK: Int, directFailed: Int) {
+        lock.lock(); defer { lock.unlock() }
+        if let s = bytes.first, s & 0xF0 == 0x90, bytes.count > 2, bytes[2] > 0 {
+            snap.notes += 1
+            snap.lastNoteAt = time
+        }
+        if sourceOK == true { snap.viaSource += 1 }
+        snap.viaDirect += directOK
+        let refused = (sourceOK == false ? 1 : 0) + directFailed
+        if refused > 0 || (sourceOK == nil && directOK == 0) { snap.failed += max(refused, 1) }
+    }
+
+    public var snapshot: Snapshot { lock.lock(); defer { lock.unlock() }; return snap }
+
+    public func reset() { lock.lock(); snap = Snapshot(); lock.unlock() }
+}
