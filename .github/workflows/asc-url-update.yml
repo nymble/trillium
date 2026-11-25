@@ -1,0 +1,32 @@
+# One-off App Store Connect URL update. Sets privacy, support, and marketing
+# URLs only. Never submits a version or build, and never prints key material.
+# Runs on pushes to this branch and on workflow_dispatch.
+name: ASC URL update
+
+on:
+  push:
+    branches: [ci/asc-url-update]
+    paths:
+      - .github/workflows/asc-url-update.yml
+      - tools/asc_url_update.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  update-urls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python3 -m pip install --quiet "pyjwt[crypto]==2.10.1"
+      - name: Update privacy, support, and marketing URLs
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          ASC_APP_ID: "6836153137"
+        run: python3 tools/asc_url_update.py
