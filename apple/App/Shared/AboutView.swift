@@ -30,7 +30,7 @@ struct AboutView: View {
                     .font(.caption).foregroundStyle(.secondary)
             }
             Section("License") {
-                Text("GPL-3.0-only. A separate commercial license is available from the copyright holder; see LICENSE-COMMERCIAL.md. Source: github.com/nymble/trillium")
+                Text("Copyright (C) 2026 Paul Lambert. GPL-3.0-or-later, or a separate commercial license (see LICENSE-COMMERCIAL.md). Source: github.com/nymble/trillium")
             }
         }
         .formStyle(.grouped)
