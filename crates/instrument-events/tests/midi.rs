@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 use instrument_events::midi::{decode_usb_packet, MidiMessage, BEND_CENTER, BEND_MAX};
 
 #[test]

@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Runs the impulse engine on telemetry frames and turns strikes into MIDI
 // note bytes for the app's own MIDI source (app-generated MIDI, see

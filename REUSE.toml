@@ -1,0 +1,28 @@
+version = 1
+
+# Files that cannot carry a comment header. A file with its own header keeps only
+# that ("closest"), so nothing here adds a second licence to a file.
+[[annotations]]
+path = [
+  "**.md", "**.svg", "**.png", "**.icns", "**.json", "**.csv", "**.txt",
+  "**.plist", "**.entitlements", "**.example", "**.x", "**.gitignore", ".gitignore",
+  "Cargo.lock", "**/Cargo.lock", "**.xcassets/**", "**.appiconset/**",
+]
+precedence = "closest"
+SPDX-FileCopyrightText = "Copyright (C) 2026 Paul Lambert"
+SPDX-License-Identifier = "GPL-3.0-or-later OR LicenseRef-Commercial"
+
+# Hardware designs (OpenSCAD, drawings, schematics, layouts, parts lists, the
+# generator scripts and the hardware READMEs): CERN-OHL-S-2.0, not the GPL.
+[[annotations]]
+path = "hardware/**"
+precedence = "override"
+SPDX-FileCopyrightText = "Copyright (C) 2026 Paul Lambert"
+SPDX-License-Identifier = "CERN-OHL-S-2.0 OR LicenseRef-Commercial"
+
+# The stock GNU GPL text keeps the Free Software Foundation's notice.
+[[annotations]]
+path = "LICENSE"
+precedence = "override"
+SPDX-FileCopyrightText = "2007 Free Software Foundation, Inc."
+SPDX-License-Identifier = "GPL-3.0-or-later"

@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Trill configuration protocol, version 1 (see docs/config-protocol.md).
 //!
 //! A small request/reply protocol carried in MIDI 1.0 System Exclusive

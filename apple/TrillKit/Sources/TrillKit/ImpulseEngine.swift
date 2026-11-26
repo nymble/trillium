@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Eight-direction strike detection from IMU telemetry for the instrument
 // view (docs/instrument-view.md). Pure Swift, no platform frameworks, so it

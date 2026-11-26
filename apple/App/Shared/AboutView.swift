@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 import SwiftUI
 import TrillKit
 
@@ -29,7 +30,7 @@ struct AboutView: View {
                     .font(.caption).foregroundStyle(.secondary)
             }
             Section("License") {
-                Text("GPL-3.0-only. A separate commercial license is available from the copyright holder; see COMMERCIAL-LICENSE.md. Source: github.com/nymble/trill")
+                Text("Copyright (C) 2026 Paul Lambert. GPL-3.0-or-later, or a separate commercial license (see LICENSE-COMMERCIAL.md). Source: github.com/nymble/trillium")
             }
         }
         .formStyle(.grouped)

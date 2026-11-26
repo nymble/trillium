@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Build the firmware's exact USB layout against a mock driver that enforces
 //! the nRF52840 USBD endpoint budget, then check the configuration
 //! descriptor against USB 2.0 ch. 9, the IAD ECN and USB-MIDI 1.0. This is a
@@ -361,5 +362,30 @@ fn descriptor_buffer_has_headroom() {
         let cfg = build(pcm);
         eprintln!("pcm={pcm}: configuration descriptor {} bytes", cfg.len());
         assert!(cfg.len() + 32 <= CONFIG_DESC_LEN, "{} bytes", cfg.len());
+    }
+}
+
+#[test]
+fn manufacturer_and_product_strings_fit_and_stay_matchable() {
+    assert_eq!(MANUFACTURER, "M-of-N");
+    assert_eq!(PRODUCT, "Trillium");
+    for pcm in [false, true] {
+        let cfg = device_config(pcm);
+        assert_eq!(cfg.manufacturer, Some(MANUFACTURER));
+        assert_eq!(cfg.product, Some(PRODUCT));
+        for s in [MANUFACTURER, PRODUCT] {
+            assert!(s.is_ascii());
+            // A string descriptor is 2 + 2 * chars bytes and at most 255 bytes.
+            assert!(2 + 2 * s.len() <= 255, "USB string descriptor limit");
+        }
+    }
+    // The app finds the board by looking for "Trill" in the device name.
+    // Old images reported "Trill XIAO MIDI (dev)"; both must still match.
+    for name in [
+        PRODUCT,
+        "Trill XIAO MIDI (dev)",
+        "Trill XIAO MIDI+PCM (dev)",
+    ] {
+        assert!(name.to_ascii_lowercase().contains("trill"), "{name}");
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  SPDX-License-Identifier: GPL-3.0-only
-  Trillium Zero canonical hardware diagram for the nymble/trill project.
+  SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
+  Trillium Zero canonical hardware diagram for the nymble/trillium project.
   Facts in this drawing are taken from docs/design-xiao-nrf52840.md,
   docs/design-raspberry-pi.md (Flex attachment and address), firmware
   board constants, the Trill datasheet Rev C v1.3, the Seeed XIAO

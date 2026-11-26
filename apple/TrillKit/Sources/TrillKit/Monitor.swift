@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Monitor model: a bounded, lock-protected event buffer filled from the
 // CoreMIDI receive thread and drained by the UI at a fixed rate, plus

@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Panic / HardFault capture and crash-loop protection.
 //!
 //! A panic or HardFault writes a short record into a `.uninit` RAM section

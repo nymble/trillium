@@ -152,7 +152,7 @@
 <text x="224.000" y="259.200" font-family="Helvetica, Arial, sans-serif" font-size="3.6" text-anchor="start" font-weight="bold" font-style="normal" fill="#1a1a1a" dominant-baseline="auto">F1w body</text>
 <line x1="222.000" y1="262.000" x2="332.000" y2="262.000" stroke="#1a1a1a" stroke-width="0.2" stroke-linecap="round"/>
 <text x="224.000" y="264.720" font-family="Helvetica, Arial, sans-serif" font-size="1.8" text-anchor="start" font-weight="normal" font-style="normal" fill="#8a8a8a" dominant-baseline="auto">Project</text>
-<text x="244.000" y="264.720" font-family="Helvetica, Arial, sans-serif" font-size="2.1" text-anchor="start" font-weight="normal" font-style="normal" fill="#1a1a1a" dominant-baseline="auto">Trillium hardware (nymble/trill)</text>
+<text x="244.000" y="264.720" font-family="Helvetica, Arial, sans-serif" font-size="2.1" text-anchor="start" font-weight="normal" font-style="normal" fill="#1a1a1a" dominant-baseline="auto">Trillium hardware (nymble/trillium)</text>
 <line x1="222.000" y1="266.000" x2="332.000" y2="266.000" stroke="#1a1a1a" stroke-width="0.2" stroke-linecap="round"/>
 <text x="224.000" y="268.720" font-family="Helvetica, Arial, sans-serif" font-size="1.8" text-anchor="start" font-weight="normal" font-style="normal" fill="#8a8a8a" dominant-baseline="auto">Part</text>
 <text x="244.000" y="268.720" font-family="Helvetica, Arial, sans-serif" font-size="2.1" text-anchor="start" font-weight="normal" font-style="normal" fill="#1a1a1a" dominant-baseline="auto">F1w body</text>

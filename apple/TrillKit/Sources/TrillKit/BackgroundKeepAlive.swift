@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Keeps the iOS app running in the background while app-generated MIDI is
 // on. iOS suspends an app shortly after the user switches away unless it

@@ -1,3 +1,5 @@
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: CERN-OHL-S-2.0 OR LicenseRef-Commercial
 // Trillium T1 enclosure: base, lid and two button caps (3D printed)
 // ---------------------------------------------------------------------
 // Parametric OpenSCAD source. Open in OpenSCAD 2021.01 or later, choose
@@ -10,7 +12,7 @@
 // Board coordinates (bx, by) are measured on the perfboard from its
 // top-left corner, component side, USB-C at the top (see layout drawing).
 //
-// Licence: GPL-3.0-only (see repository LICENSE).
+// Licence: CERN-OHL-S-2.0 or commercial (see LICENSES/CERN-OHL-S-2.0.txt and LICENSE-COMMERCIAL.md).
 
 /* [Output] */
 part = "all"; // [all, base, lid, caps, assembly]

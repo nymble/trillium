@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // The app's own MIDI output for app-generated MIDI (instrument view). A
 // separate CoreMIDI client so MIDIClient keeps its rule of never creating

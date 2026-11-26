@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Handpan scales for the instrument view (docs/instrument-view.md). Each
 // scale is stored exactly as published (ding, then tone fields from low to

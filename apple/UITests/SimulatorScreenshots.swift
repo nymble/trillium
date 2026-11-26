@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // CI helper: launch Trillium on an iPad Simulator, switch tabs with launch
 // arguments, rotate, and write named PNGs into the test runner's Documents

@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: CERN-OHL-S-2.0 OR LicenseRef-Commercial
 """Derived mechanical geometry shared by the OpenSCAD sources and the drawings.
 
 The .scad files carry the same formulas so they stay editable on their own;

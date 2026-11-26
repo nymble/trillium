@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 [package]
 name = "trill-config"
 description = "no_std, versioned MIDI SysEx configuration protocol for the Trill XIAO firmware: bounded USB-MIDI SysEx reassembly, validated parameters, request handling and reply encoding"
@@ -5,7 +7,6 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-authors.workspace = true
 rust-version = "1.81"
 publish = false
 

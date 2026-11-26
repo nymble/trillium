@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Trill configuration protocol v1 (docs/config-protocol.md). This is a
 // Swift implementation of the same wire format as the Rust `trill-config`

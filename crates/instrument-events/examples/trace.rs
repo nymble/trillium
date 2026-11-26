@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Print the documented example trace (docs/midi-mapping.md) as USB-MIDI
 //! packets: `cargo run -p instrument-events --example trace`.
 use instrument_events::{Config, Engine, MotionSample, TouchSample};

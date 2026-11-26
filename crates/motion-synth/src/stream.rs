@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Framed PCM test stream (device → host over a USB CDC ACM port).
 //!
 //! This is a diagnostics transport, **not** a USB Audio Class device: the

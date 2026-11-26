@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 """Put the firmware for this version into apple/Firmware for the app bundle.
 
     bundle_firmware.py IMAGE.uf2 VERSION [OUT_DIR]

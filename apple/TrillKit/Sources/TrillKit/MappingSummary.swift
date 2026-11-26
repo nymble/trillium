@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Plain-language description of a parameter set: what each input does and
 // which MIDI it sends. Shown on the home screen and at the top of the mapping

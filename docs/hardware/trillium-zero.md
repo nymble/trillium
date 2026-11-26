@@ -2,7 +2,7 @@
 
 **Model:** T0 · **Status:** the showcase starting instrument, and the primary development configuration to date.
 
-Trillium Zero is one inexpensive part on a USB cable: a [Seeed Studio XIAO nRF52840 Sense](https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html). Plug it in, install the free open [Trillium](../apple-app.md) app and the matching Trill firmware from the [GitHub Releases](https://github.com/nymble/trill/releases), and it is a class-compliant USB-MIDI motion instrument. The board is 21 × 17.8 mm and suits many DIY cases and packaging ideas. No extra parts are required.
+Trillium Zero is one inexpensive part on a USB cable: a [Seeed Studio XIAO nRF52840 Sense](https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html). Plug it in, install the free open [Trillium](../apple-app.md) app and the matching Trill firmware from the [GitHub Releases](https://github.com/nymble/trillium/releases), and it is a class-compliant USB-MIDI motion instrument. The board is 21 × 17.8 mm and suits many DIY cases and packaging ideas. No extra parts are required.
 
 Trillium is the Apple app (Mac, iPhone and iPad). Trill is the name of the firmware, the protocol and this repository, and of Bela's touch-sensor product.
 
@@ -179,12 +179,12 @@ Practical notes, not a design:
 
 ## Verification
 
-These checks do not require building firmware from source. Use a published **application-only** UF2 from a [GitHub Release](https://github.com/nymble/trill/releases) and the Trillium app from the same release. The app can identify the board and install the firmware. Loading rules: [firmware-xiao-sense.md](../firmware-xiao-sense.md) and [test-kit.md](../test-kit.md).
+These checks do not require building firmware from source. Use a published **application-only** UF2 from a [GitHub Release](https://github.com/nymble/trillium/releases) and the Trillium app from the same release. The app can identify the board and install the firmware. Loading rules: [firmware-xiao-sense.md](../firmware-xiao-sense.md) and [test-kit.md](../test-kit.md).
 
 1. For T0, connect USB-C. `3V3` on pin 12 should be about 3.3 V. If you have added a Flex or a battery, the electrical checks in [Assembly](#assembly) should already have passed.
 2. Enter the UF2 bootloader: connect USB-C and double-press RESET quickly. A drive should appear. On some boards, including Omi DevKits, the volume name is `XIAO-SENSE`.
 3. Back up the current application **before** writing anything, and write only an application-only UF2. The project's `xiao_uf2.py` tool, shipped with the test kit, enforces the Board-ID and refuses a full `CURRENT.UF2` and bootloader images. See the loading section of the firmware document for the exact commands. The bootloader and SoftDevice must be left untouched. Installing from Trillium follows the same rules.
-4. After the board restarts, a USB-MIDI device should appear to the host (the development product string is `Trill XIAO MIDI (dev)` in the current firmware). The red charge LED is not a firmware status light; the user RGB LED is.
+4. After the board restarts, a USB-MIDI device should appear to the host (the product string is `Trillium` (older firmware: `Trill XIAO MIDI (dev)`) in the current firmware). The red charge LED is not a firmware status light; the user RGB LED is.
 5. Open Trillium on a Mac, or on an iPhone or iPad once a signed build is available, and connect to the instrument.
    - **T0 (and T1 without a Flex):** the app should show IMU activity (acceleration, rotation, orientation) when you move the board. The linear touch sensor is absent, which the firmware treats as optional: touch reads as not touched, and the sensor is retried in the background. That is expected.
    - **Breadboard Flex / planned F1:** as above, and a touch on the stock strip should appear in the app (location along the strip, after a hands-off baseline). If the strip is silent or reports nonsense, recheck FFC orientation, address 0x48, pull-ups, and the four QWIIC wires before changing anything else.

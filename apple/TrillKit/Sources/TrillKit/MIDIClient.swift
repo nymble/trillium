@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // CoreMIDI adapter (macOS and iOS). Uses only documented CoreMIDI APIs:
 // MIDIClientCreateWithBlock for setup/hot-plug notifications,

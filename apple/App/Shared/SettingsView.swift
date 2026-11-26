@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Everything beyond picking a sound: the full mapping editor, MIDI ports,
 // the MIDI monitor, device tools, firmware and About.

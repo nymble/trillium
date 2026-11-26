@@ -1,3 +1,5 @@
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: CERN-OHL-S-2.0 OR LicenseRef-Commercial
 // Trillium F1p: 3D-printed Flex instrument body (shell, bottom plate, caps)
 // ---------------------------------------------------------------------
 // Parametric OpenSCAD source. Open in OpenSCAD 2021.01 or later, choose
@@ -14,7 +16,7 @@
 // Y across (centred), Z up from the bottom. The shell is modelled in
 // assembly position and flipped for printing (top surface on the bed).
 //
-// Licence: GPL-3.0-only (see repository LICENSE).
+// Licence: CERN-OHL-S-2.0 or commercial (see LICENSES/CERN-OHL-S-2.0.txt and LICENSE-COMMERCIAL.md).
 
 /* [Output] */
 part = "all"; // [all, shell, plate, caps, assembly]

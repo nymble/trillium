@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Battery and Bluetooth status from `STATUS` (message 0x47, firmware with
 // variant bit 5). Layout in crates/trill-config/src/status.rs.

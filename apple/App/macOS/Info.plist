@@ -29,6 +29,6 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>GPL-3.0-only · github.com/nymble/trill</string>
+	<string>Copyright (C) 2026 Paul Lambert. GPL-3.0-or-later or commercial license. github.com/nymble/trillium</string>
 </dict>
 </plist>

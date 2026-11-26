@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Read-only firmware checks for the guided update assistant, ported from
 // tools/xiao_uf2.py (same constants and rules). Nothing here writes to a

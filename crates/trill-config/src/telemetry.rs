@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Sensor telemetry (protocol v1 extension, firmware 0.3.0 and newer).
 //!
 //! The host subscribes with `TELEMETRY_START` (rate in Hz) and the device

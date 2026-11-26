@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Put the memory layout on the linker search path as `memory.x` (the
 //! sources live in `link/` so the package root never shadows the copy):
 //! `link/memory-ble.x` for the `ble-midi` build (SoftDevice RAM reserved),

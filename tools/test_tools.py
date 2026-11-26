@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 """Unit tests for tools/xiao_uf2.py and tools/pcm_capture.py (stdlib unittest).
 
   python3 -m unittest discover -s tools -p 'test_*.py'

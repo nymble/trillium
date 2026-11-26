@@ -95,7 +95,7 @@ With USB and the cell disconnected:
 
 Then plug in USB with no cell fitted:
 
-5. 3V3 at I3 ≈ 3.3 V. The existing firmware should enumerate as `Trill XIAO MIDI (dev)`.
+5. 3V3 at I3 ≈ 3.3 V. The existing firmware should enumerate as `Trillium` (older firmware: `Trill XIAO MIDI (dev)`).
 
 Then the cell, with USB unplugged and SW1 OFF:
 

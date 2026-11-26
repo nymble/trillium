@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 """Release notes for vX.Y.Z: the CHANGELOG section plus a downloads guide.
 
     release_notes.py 0.5.0 [CHANGELOG.md] > notes.md
@@ -44,7 +45,7 @@ python3 xiao_uf2.py flash --drive /Volumes/XIAO-SENSE --board-id <Board-ID> xiao
 python3 xiao_uf2.py flash --drive /Volumes/XIAO-SENSE --board-id <Board-ID> xiao-sense-fw-{v}.uf2 --write  # copy
 ```
 
-Development builds: the USB IDs (1209:0003) and SysEx ID (0x7D) are test identifiers. Licence: GPL-3.0-only; commercial terms in `COMMERCIAL-LICENSE.md`.
+Development builds: the USB IDs (1209:0003) and SysEx ID (0x7D) are test identifiers. Licence: GPL-3.0-or-later; commercial terms in `LICENSE-COMMERCIAL.md`.
 """
 
 

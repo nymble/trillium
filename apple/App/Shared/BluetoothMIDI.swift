@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Bluetooth MIDI pairing through the system panels. The app never scans
 // or connects by itself: CoreAudioKit's panel connects the BLE-MIDI

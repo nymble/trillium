@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 [package]
 name = "trill-usb"
 description = "USB device layout for the Trill XIAO firmware: class-compliant USB-MIDI 1.0 + CDC ACM diagnostics (+ optional PCM test port), built with embassy-usb and checked on the host"
@@ -5,7 +7,6 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-authors.workspace = true
 rust-version = "1.85"
 publish = false
 

@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Telemetry subscription, scheduling and frame codec.
 use instrument_events::Config;
 use trill_config::telemetry::{self, Frame, Sample, Schedule, TouchPoint, TouchesFrame};

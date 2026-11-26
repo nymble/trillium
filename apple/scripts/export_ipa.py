@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 """Archive and export a development IPA of Trillium for a physical iPhone or iPad.
 
 Requires macOS with Xcode, a generated apple/Trillium.xcodeproj

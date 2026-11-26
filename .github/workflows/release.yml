@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 name: Release
 
 # Tag push vX.Y.Z -> check versions, build everything, create a DRAFT GitHub
@@ -72,7 +74,7 @@ jobs:
         run: |
           name="trill-${{ needs.check.outputs.version }}-${{ matrix.target }}"
           mkdir -p "dist/${name}"
-          cp target/${{ matrix.target }}/release/trill LICENSE COMMERCIAL-LICENSE.md README.md "dist/${name}/"
+          cp target/${{ matrix.target }}/release/trill LICENSE LICENSE-COMMERCIAL.md README.md "dist/${name}/"
           tar -C dist -czf "dist/${name}.tar.gz" "${name}"
       - uses: actions/upload-artifact@v4
         with:

@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 [package]
 name = "lsm6ds3trc"
 description = "no_std embedded-hal 1.0 driver for the ST LSM6DS3TR-C accelerometer + gyroscope (I2C)"
@@ -5,7 +7,6 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-authors.workspace = true
 rust-version = "1.81"
 publish = false
 

@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Settings › Firmware: the firmware carried in the app, the connected
 // board, installs (FirmwareCard) and backups. The older read-only assistant

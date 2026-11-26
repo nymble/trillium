@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: CERN-OHL-S-2.0 OR LicenseRef-Commercial
 """Draw the T1 and F1 schematics from hw_model (net-label style, A4 landscape)."""
 
 from __future__ import annotations
@@ -128,7 +130,7 @@ class Sch:
         self.buttons()
         self.i2c()
         self.notes()
-        rows = [("Project", "Trillium hardware (nymble/trill)"),
+        rows = [("Project", "Trillium hardware (nymble/trillium)"),
                 ("Model", {"T1": "T1  (Tiny, nRF52840)", "F1": "F1  (Flex, nRF52840)"}[self.m]),
                 ("Board", "Core board 11 x 18 holes (27.9 x 45.7 mm)"),
                 ("Revision", REV), ("Date", DATE),

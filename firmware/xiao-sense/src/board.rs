@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! XIAO nRF52840 Sense board constants (Seeed schematic v1.1 Sense, Seeed
 //! Arduino variant, Zephyr `xiao_ble_nrf52840_sense.dts`). Pins themselves
 //! are taken by name in `main.rs`; this file documents and centralises rates.

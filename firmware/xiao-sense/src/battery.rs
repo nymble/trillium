@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Battery voltage, charge status and presence (every build).
 //!
 //! Pins (Seeed XIAO nRF52840 schematic; see `trill_board::battery` and

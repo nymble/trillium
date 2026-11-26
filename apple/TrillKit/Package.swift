@@ -1,5 +1,6 @@
 // swift-tools-version:5.9
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // TrillKit: protocol codec, MIDI monitor model, presets, UF2 validation and
 // (on Apple platforms) the CoreMIDI adapter shared by the Trill Mac and iOS

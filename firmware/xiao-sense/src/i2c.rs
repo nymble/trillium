@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! embedded-hal I²C adapter with a per-transaction timeout, so a stuck bus
 //! or missing pull-ups produce an error instead of hanging a task.
 

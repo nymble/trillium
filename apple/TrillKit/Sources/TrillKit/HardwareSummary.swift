@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // What the app has detected about the connected board: model in the
 // T0/T1/T2/F1 lineup plus a capability list, firmware, USB identity and

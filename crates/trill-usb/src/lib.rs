@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! USB device layout shared by the firmware and the host-side descriptor
 //! tests, so the tests check the exact descriptors the firmware sends.
 //!
@@ -53,10 +54,20 @@ pub const MIDI_CABLES: u8 = 2;
 pub const CABLE_INSTRUMENT: u8 = 0;
 /// Cable for the SysEx configuration protocol (both directions).
 pub const CABLE_CONFIG: u8 = 1;
-/// `bcdDevice`: bumped whenever the descriptor layout changes under the same
-/// PID (0x0200 = two MIDI cables), so hosts that cache descriptors per
+/// USB manufacturer string. Firmware before this change reported `nymble/trill`.
+pub const MANUFACTURER: &str = "M-of-N";
+/// USB product string, the same for both layouts (the PID tells them apart).
+/// Firmware before this change reported `Trill XIAO MIDI+PCM (dev)` (PID
+/// `0x0003`) or `Trill XIAO MIDI (dev)` (PID `0x0002`). Hosts must not match
+/// on the full string: the app looks for "Trill" in the device name, which
+/// both the old and new names contain. Well under the 126-character limit of
+/// a USB string descriptor.
+pub const PRODUCT: &str = "Trillium";
+/// `bcdDevice`: bumped whenever the descriptor layout or strings change under
+/// the same PID (0x0200 = two MIDI cables, 0x0201 = manufacturer "M-of-N" and
+/// product "Trillium"), so hosts that cache descriptors per
 /// VID/PID/bcdDevice re-read them.
-pub const DEVICE_RELEASE: u16 = 0x0200;
+pub const DEVICE_RELEASE: u16 = 0x0201;
 /// Full-speed bulk packet size used by every function.
 pub const MAX_PACKET: u16 = 64;
 /// Size of the configuration-descriptor buffer the firmware must provide.
@@ -81,12 +92,8 @@ pub const fn product_id(pcm: bool) -> u16 {
 /// Device configuration for a layout.
 pub fn device_config(pcm: bool) -> Config<'static> {
     let mut cfg = Config::new(USB_VID, product_id(pcm));
-    cfg.manufacturer = Some("nymble/trill");
-    cfg.product = Some(if pcm {
-        "Trill XIAO MIDI+PCM (dev)"
-    } else {
-        "Trill XIAO MIDI (dev)"
-    });
+    cfg.manufacturer = Some(MANUFACTURER);
+    cfg.product = Some(PRODUCT);
     cfg.serial_number = None;
     cfg.device_release = DEVICE_RELEASE;
     cfg.max_power = MAX_POWER_MA;

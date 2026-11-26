@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 use instrument_events::{Config, PitchMode};
 use trill_config::usb::{cin_len, encode_sysex, Assembler, MAX_PACKETS};
 use trill_config::*;

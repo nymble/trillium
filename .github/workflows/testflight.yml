@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 # Optional. Manual dispatch only. Archives the iOS and/or macOS apps with
 # cloud-managed signing and can upload a TestFlight build when the named
 # repository secrets are all present. It never tags, never merges, and

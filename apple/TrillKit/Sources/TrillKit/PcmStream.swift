@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Framed PCM test stream (`TRPC`), the same layout as crates/motion-synth
 // `stream`. Used for the microphone test path and the optional debug synth.

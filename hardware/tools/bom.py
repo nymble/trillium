@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: CERN-OHL-S-2.0 OR LicenseRef-Commercial
 """Bills of materials for T1 and F1 (electrical + mechanical), from hw_model."""
 
 from __future__ import annotations

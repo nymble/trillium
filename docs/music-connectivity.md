@@ -224,12 +224,12 @@ Clocks: never subtract a device timestamp from a host timestamp. Use one of:
 
 ## Licensing notes for BLE (engineering analysis, not legal advice)
 
-- All code in this repository is Nymble's, offered under GPL-3.0-only or a commercial licence. This document changes no licence.
+- All code in this repository is owned by the copyright holder (see NOTICE.md), offered under GPL-3.0-or-later or a commercial licence. This document changes no licence.
 - Rust BLE options on the nRF52840:
   - **`trouble-host`** (Apache-2.0 OR MIT) [S22], with the controller from **`nrf-sdc`**. The `nrf-sdc` bindings are Apache-2.0 OR MIT, but they link Nordic's SoftDevice Controller and MPSL libraries, which are under LicenseRef-Nordic-5-Clause (binary-only, Nordic ICs only) [S21].
   - **`nrf-softdevice`**, which calls the S140 SoftDevice binary that the factory bootloader setup already keeps below `0x27000`. It is a separate binary in flash reached through supervisor calls, still Nordic-licensed.
   - **Zephyr's open-source BLE controller** (Apache-2.0, C). It would mean moving away from the pure-Rust Embassy stack.
-- GPL-3.0 requires Corresponding Source for the whole conveyed work and forbids further restrictions (§§1, 7, 10). Whether a binary-only Nordic controller linked into the same image, or the separately flashed SoftDevice, is compatible with distributing that image under GPL-3.0-only depends on facts and interpretation (System Library, aggregate vs combined work).
+- GPL-3.0 requires Corresponding Source for the whole conveyed work and forbids further restrictions (§§1, 7, 10). Whether a binary-only Nordic controller linked into the same image, or the separately flashed SoftDevice, is compatible with distributing that image under GPL-3.0-or-later depends on facts and interpretation (System Library, aggregate vs combined work).
 - Options for the copyright holder to choose from:
   - (a) add a narrowly scoped GPL §7 additional permission for linking Nordic BLE controller libraries;
   - (b) distribute BLE builds under the commercial licence;

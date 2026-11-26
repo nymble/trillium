@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Board support logic that does not touch hardware, so it is unit tested
 //! on the host: battery measurement maths and presence heuristic
 //! ([`battery`]), and the Bluetooth settings record stored in flash

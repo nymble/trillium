@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! IMU task: power, init, data-ready-paced reads (833 Hz ODR; every sample
 //! is read and processed), motion processing, hand-off to the event engine,
 //! with bounded fault recovery (power-cycle + exponential backoff). Touch
