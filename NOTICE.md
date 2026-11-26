@@ -8,6 +8,8 @@ Versions published before this change were offered under GPL-3.0-only. Those pub
 
 The wiring diagrams in `docs/images/` are original drawings created for this project.
 
+The hardware designs in `hardware/` (OpenSCAD, drawings, schematics, layouts, parts lists and the generator scripts) are Copyright (C) 2026 Paul Lambert and are offered under `CERN-OHL-S-2.0 OR LicenseRef-Commercial` rather than the GPL; the licence text is in [LICENSES/CERN-OHL-S-2.0.txt](LICENSES/CERN-OHL-S-2.0.txt).
+
 ## Independent implementation
 
 `trill-driver` was written independently from the published Trill I²C protocol description in the *Trill Capacitive Touch Sensors* datasheet (Rev C, v1.3, 2025-02-03). Its behaviour was cross-checked against Bela's open-source host libraries. No source code was copied from them. Timing constants (identify delay, acknowledgement polling budget, legacy inter-command delay) and default settings (for example Flex prescaler 4 and noise threshold 0.03) follow values observed in these libraries:

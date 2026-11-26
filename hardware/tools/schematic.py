@@ -1,5 +1,5 @@
 # Copyright (C) 2026 Paul Lambert
-# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
+# SPDX-License-Identifier: CERN-OHL-S-2.0 OR LicenseRef-Commercial
 """Draw the T1 and F1 schematics from hw_model (net-label style, A4 landscape)."""
 
 from __future__ import annotations

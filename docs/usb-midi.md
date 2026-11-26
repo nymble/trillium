@@ -9,10 +9,10 @@ The default firmware build is a **class-compliant USB-MIDI 1.0** device plus a C
 | Item | Value |
 |---|---|
 | VID:PID | `1209:0003` (pid.codes **test** PID: development only; a product needs its own PID). Older default images used `1209:0002` (no PCM port) |
-| Product / manufacturer | `Trill XIAO MIDI+PCM (dev)` / `nymble/trill` |
+| Product / manufacturer | `Trillium` / `M-of-N` (firmware before this change: `Trill XIAO MIDI+PCM (dev)` / `nymble/trill`) |
 | Device class | `EF/02/01` composite with IADs |
 | Functions | CDC ACM diagnostics (interfaces 0–1); Audio Control (2) + MIDI Streaming (3), two virtual cables (embedded IN + OUT jacks each): cable 0 = instrument, cable 1 = configuration ([protocol](config-protocol.md)); CDC ACM PCM (4–5, microphone test stream, not USB Audio); bulk endpoints of 64 bytes |
-| Device release (`bcdDevice`) | `0x0200` (firmware 0.2.0) |
+| Device release (`bcdDevice`) | `0x0201` (`0x0200` before the product-name change; two MIDI cables since firmware 0.2.0) |
 | Power request | 100 mA |
 | Not present | USB Audio streaming (no sound card), MIDI 2.0 / UMP, MPE, BLE |
 
@@ -31,8 +31,8 @@ Load **only** after the target is confirmed: read `INFO_UF2.TXT` from the bootlo
 Record results (host model, OS version, adapter, pass/fail, counters) in the bring-up issue. None of these steps have been done yet.
 
 **A. macOS (Audio MIDI Setup / CoreMIDI)**
-1. Plug in the board (direct USB-C, then through a hub). *System Information → USB* should show `Trill XIAO MIDI+PCM (dev)`, `1209:0003`.
-2. *Audio MIDI Setup → Window → Show MIDI Studio*: a device `Trill XIAO MIDI (dev)` with two ports appears and is not greyed out. The first port carries the instrument and the second the configuration replies. Earlier 0.1 builds showed one port; if macOS still shows one, remove the stale device in MIDI Studio and replug.
+1. Plug in the board (direct USB-C, then through a hub). *System Information → USB* should show `Trillium` (older images: `Trill XIAO MIDI+PCM (dev)`), `1209:0003`.
+2. *Audio MIDI Setup → Window → Show MIDI Studio*: a device `Trillium` (older images: `Trill XIAO MIDI (dev)`) with two ports appears and is not greyed out. The first port carries the instrument and the second the configuration replies. Earlier 0.1 builds showed one port; if macOS still shows one, remove the stale device in MIDI Studio and replug.
 3. Open the diagnostics port (the first `cu.usbmodem…`; `screen /dev/cu.usbmodem… 115200`; the baud rate is ignored). The banner shows `usb 1209:0003`. Status shows `midi=up` and the LED shows the blue heartbeat when idle.
 4. Watch the port with a CoreMIDI monitor app (for example *MIDI Monitor*). Touch the strip: one pitch bend, then Note On; slide: bend; lift: Note Off and pressure 0. The connect sequence (CC123, CC120, bend 8192, pressure 0, RPN 0 = 24) appears on (re)plug. Compare with the [example trace](midi-mapping.md#example-trace).
 5. Press `p`: the reset sequence appears. Unplug while holding a note, replug: no note starts until the finger is lifted and touched again.
@@ -40,7 +40,7 @@ Record results (host model, OS version, adapter, pass/fail, counters) in the bri
 7. IMU independence: on a plain XIAO nRF52840 (no IMU), touch MIDI must still work while the status shows `imu=retry`.
 
 **B. iPhone / iPad over USB-C** (USB-C to USB-C cable, then through a powered USB-C hub)
-1. Open a CoreMIDI app that lists sources. `Trill XIAO MIDI (dev)` should appear.
+1. Open a CoreMIDI app that lists sources. `Trillium` (older images: `Trill XIAO MIDI (dev)`) should appear.
 2. Touch → notes. Record whether the device enumerates when bus-powered directly and whether it needs the hub.
 
 **C. iPhone / iPad with Lightning** (Apple Lightning to USB 3 Camera Adapter **with** its power input connected; then the Lightning to USB Camera Adapter without power)

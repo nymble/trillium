@@ -122,3 +122,7 @@ Requirements: Python 3.10+ and matplotlib (used to turn engraving text into outl
 - C&K OS series slide switch: <https://www.ckswitches.com/media/1428/os.pdf>
 - Omron B3F tactile switch (6 x 6 x 4.3 mm, 6.5 x 4.5 mm pins): <https://www.rcscomponents.kiev.ua/datasheets/B3F.pdf>
 - 5 mm RGB common-anode LED forward voltages (≈ 2.2 V red, ≈ 3.3 V green/blue at 20 mA): Kingbright WP154A4 series listing <https://www.digikey.com/en/products/detail/kingbright/WP154A4AVS-RGB-CA/16842328>
+
+## Licence
+
+Copyright (C) 2026 Paul Lambert. The hardware designs in this folder (OpenSCAD sources, drawings, schematics, layouts, parts lists and the generator scripts in `tools/`) are offered under SPDX `CERN-OHL-S-2.0 OR LicenseRef-Commercial`: the CERN Open Hardware Licence Version 2, Strongly Reciprocal ([LICENSES/CERN-OHL-S-2.0.txt](../LICENSES/CERN-OHL-S-2.0.txt)), or separate commercial terms ([LICENSE-COMMERCIAL.md](../LICENSE-COMMERCIAL.md)). The software and documentation elsewhere in the repository are `GPL-3.0-or-later OR LicenseRef-Commercial`. Parts, modules and boards from other vendors keep their own licences ([NOTICE.md](../NOTICE.md)).

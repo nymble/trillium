@@ -1,6 +1,6 @@
 # Apple app: Trillium (macOS and iOS)
 
-The app is named **Trillium** (bundle `Trillium.app`). *Trill* is Bela's touch-sensor product; the hardware, firmware, USB device name (`Trill XIAO MIDI (dev)`), protocol, the `TrillKit` Swift package and the repository keep the Trill name.
+The app is named **Trillium** (bundle `Trillium.app`). *Trill* is Bela's touch-sensor product; the hardware, firmware, USB device name (`Trillium`; older firmware: `Trill XIAO MIDI (dev)`), protocol, the `TrillKit` Swift package and the repository keep the Trill name.
 
 `apple/` contains **Trillium**, a SwiftUI companion app for Mac, iPhone and iPad. It monitors and configures the XIAO nRF52840 Sense instrument over class-compliant USB MIDI. **You do not need the app to play.** The instrument is a standard USB-MIDI device and plays straight into GarageBand, Logic, AUM or any CoreMIDI app.
 

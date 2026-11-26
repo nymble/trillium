@@ -1,5 +1,5 @@
 # Copyright (C) 2026 Paul Lambert
-# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
+# SPDX-License-Identifier: CERN-OHL-S-2.0 OR LicenseRef-Commercial
 """Enclosure drawings (T1, F1p, F1w) and F1w laser-cut sheets."""
 
 from __future__ import annotations

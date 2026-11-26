@@ -364,3 +364,28 @@ fn descriptor_buffer_has_headroom() {
         assert!(cfg.len() + 32 <= CONFIG_DESC_LEN, "{} bytes", cfg.len());
     }
 }
+
+#[test]
+fn manufacturer_and_product_strings_fit_and_stay_matchable() {
+    assert_eq!(MANUFACTURER, "M-of-N");
+    assert_eq!(PRODUCT, "Trillium");
+    for pcm in [false, true] {
+        let cfg = device_config(pcm);
+        assert_eq!(cfg.manufacturer, Some(MANUFACTURER));
+        assert_eq!(cfg.product, Some(PRODUCT));
+        for s in [MANUFACTURER, PRODUCT] {
+            assert!(s.is_ascii());
+            // A string descriptor is 2 + 2 * chars bytes and at most 255 bytes.
+            assert!(2 + 2 * s.len() <= 255, "USB string descriptor limit");
+        }
+    }
+    // The app finds the board by looking for "Trill" in the device name.
+    // Old images reported "Trill XIAO MIDI (dev)"; both must still match.
+    for name in [
+        PRODUCT,
+        "Trill XIAO MIDI (dev)",
+        "Trill XIAO MIDI+PCM (dev)",
+    ] {
+        assert!(name.to_ascii_lowercase().contains("trill"), "{name}");
+    }
+}

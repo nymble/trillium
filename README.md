@@ -100,6 +100,7 @@ Copyright (C) 2026 Paul Lambert.
 This project is dual-licensed, SPDX `GPL-3.0-or-later OR LicenseRef-Commercial`: you may use it under the GNU General Public License, version 3 or (at your option) any later version, or under separate commercial terms from the copyright holder.
 
 - Code, documentation, and diagrams in this repository: [GNU GPL v3.0 or later](LICENSE) (SPDX expression `GPL-3.0-or-later OR LicenseRef-Commercial`). The full licence texts are in [LICENSES/](LICENSES/).
+- Hardware designs in [hardware/](hardware/) (OpenSCAD, drawings, schematics, layouts, parts lists): [CERN-OHL-S-2.0](LICENSES/CERN-OHL-S-2.0.txt) (SPDX expression `CERN-OHL-S-2.0 OR LicenseRef-Commercial`).
 - Commercial or proprietary licensing on separate terms: see [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) (enquiries: support@m-of-n.com).
 - Third-party names, references, attributions and known exceptions: see [NOTICE.md](NOTICE.md).
 - Contributing: see [CONTRIBUTING.md](CONTRIBUTING.md) (interim terms: contributions may be licensed under both the GPL and commercial terms).
