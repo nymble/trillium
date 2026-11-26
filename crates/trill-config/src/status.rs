@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Board status: battery and Bluetooth (`GET_STATUS` -> `STATUS`), behind
 //! [`crate::VARIANT_STATUS`].
 //!

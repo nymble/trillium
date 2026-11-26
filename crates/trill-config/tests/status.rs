@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Battery and Bluetooth status (`GET_STATUS`, actions 10..=13).
 use instrument_events::Config;
 use trill_config::*;

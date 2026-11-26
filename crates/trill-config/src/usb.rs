@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! SysEx over USB-MIDI 1.0 event packets (USB Device Class Definition for
 //! MIDI Devices 1.0, §4).
 //!

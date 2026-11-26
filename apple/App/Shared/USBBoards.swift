@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Spot an nRF52840 board on USB that is not running Trillium firmware: a
 // new XIAO nRF52840 Sense (Seeed's demo firmware), one running other

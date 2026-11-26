@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- SPDX-License-Identifier: GPL-3.0-only. Original diagram for the nymble/trill project. -->
+<!-- SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial -->
+<!-- Original diagram for the nymble/trillium project. -->
 <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="600" viewBox="0 0 1040 600" font-family="Helvetica, Arial, sans-serif" font-size="14">
   <rect width="1040" height="600" fill="#ffffff"/>
   <text x="20" y="32" font-size="20" font-weight="bold">Trill Flex → Raspberry Pi 40-pin header (I²C bus 1)</text>

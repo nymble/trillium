@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Routing for app-generated MIDI (instrument view): which destinations get
 // direct sends besides the "Trillium Instrument" virtual source, the saved

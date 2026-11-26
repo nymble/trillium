@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Control-rate motion processing: gyro bias calibration, complementary
 //! orientation filter, rotation energy and tap detection.
 

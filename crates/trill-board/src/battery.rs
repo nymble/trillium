@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Battery measurement on the Seeed XIAO nRF52840 (Sense).
 //!
 //! Circuit (Seeed XIAO nRF52840 KiCad project v1.2, nets `VBAT`,

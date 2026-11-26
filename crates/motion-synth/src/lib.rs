@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
-// Copyright (C) 2026 Nymble (https://github.com/nymble)
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 
 //! Motion-to-music engine, `no_std`, no heap, fixed-size state.
 //!

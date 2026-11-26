@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Host-side request encoders (used by tests, tools and as the reference
 //! for other implementations such as the Swift app's `TrillKit`).
 

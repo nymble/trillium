@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Trill task: detect on the external bus (D4/D5), read status + centroids
 //! at a fixed period, hand each *new* frame (by Trill frame ID) to the event
 //! engine; release notes and retry with backoff if the sensor disappears.

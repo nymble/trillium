@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Build the firmware's exact USB layout against a mock driver that enforces
 //! the nRF52840 USBD endpoint budget, then check the configuration
 //! descriptor against USB 2.0 ch. 9, the IAD ECN and USB-MIDI 1.0. This is a

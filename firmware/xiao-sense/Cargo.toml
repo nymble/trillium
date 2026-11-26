@@ -1,11 +1,12 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 [package]
 name = "xiao-sense-fw"
 description = "Embassy firmware for the Seeed XIAO nRF52840 Sense: class-compliant USB-MIDI + CDC diagnostics from Trill touch and LSM6DS3TR-C motion; microphone test PCM stream; optional debug synth"
 version = "0.8.0"
 edition = "2021"
-license = "GPL-3.0-only"
-repository = "https://github.com/nymble/trill"
-authors = ["Nymble (https://github.com/nymble)"]
+license = "GPL-3.0-or-later OR LicenseRef-Commercial"
+repository = "https://github.com/nymble/trillium"
 rust-version = "1.85"
 publish = false
 

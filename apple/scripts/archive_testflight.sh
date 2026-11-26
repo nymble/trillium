@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 # Archive Trillium for App Store Connect / TestFlight and optionally upload.
 #
 # Cloud-managed signing: `xcodebuild` archive and `-exportArchive` use

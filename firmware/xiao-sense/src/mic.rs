@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Onboard PDM microphone test capture.
 //!
 //! Off by default. Action 7 powers the microphone, starts 16 kHz 16-bit

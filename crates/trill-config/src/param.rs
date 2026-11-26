@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Configurable parameters. Values are unsigned 14-bit on the wire
 //! (`value_hi << 7 | value_lo`); every parameter has an inclusive range and
 //! values outside it are rejected, never clamped.

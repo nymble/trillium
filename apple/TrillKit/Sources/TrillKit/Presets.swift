@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Host-side named presets. A preset is a complete parameter set stored as
 // JSON on the Mac/iPhone; loading one only fills the editor, and the device

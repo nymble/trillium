@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Audio task (high-priority interrupt executor), only built with the
 //! optional `pcm-synth` feature: the on-board synth is a debug/test path,
 //! not the instrument's audio output (USB MIDI drives a host synth).

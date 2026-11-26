@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Instrument view engine on synthetic IMU traces: 8 directions upright and
 // upside down, tilt rings, multi-turn roll, debounce and refractory, swing

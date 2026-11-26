@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Runs on macOS/iOS only: exercises the real CoreMIDI send/receive path of
 // MIDIClient against virtual endpoints created by the test itself, with

@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Sensor telemetry (docs/config-protocol.md, "Telemetry"): frame decoding,
 // a bounded thread-safe buffer filled on the CoreMIDI thread, and a rolling

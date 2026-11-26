@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Universal MIDI Packet (UMP) handling for MIDI 1.0 protocol event lists as
 // delivered by CoreMIDI's MIDIInputPortCreateWithProtocol(._1_0). CoreMIDI

@@ -2,7 +2,7 @@
 
 **Model:** T0 · **Status:** the showcase starting instrument, and the primary development configuration to date.
 
-Trillium Zero is one inexpensive part on a USB cable: a [Seeed Studio XIAO nRF52840 Sense](https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html). Plug it in, install the free open [Trillium](../apple-app.md) app and the matching Trill firmware from the [GitHub Releases](https://github.com/nymble/trill/releases), and it is a class-compliant USB-MIDI motion instrument. The board is 21 × 17.8 mm and suits many DIY cases and packaging ideas. No extra parts are required.
+Trillium Zero is one inexpensive part on a USB cable: a [Seeed Studio XIAO nRF52840 Sense](https://www.seeedstudio.com/Seeed-XIAO-BLE-Sense-nRF52840-p-5253.html). Plug it in, install the free open [Trillium](../apple-app.md) app and the matching Trill firmware from the [GitHub Releases](https://github.com/nymble/trillium/releases), and it is a class-compliant USB-MIDI motion instrument. The board is 21 × 17.8 mm and suits many DIY cases and packaging ideas. No extra parts are required.
 
 Trillium is the Apple app (Mac, iPhone and iPad). Trill is the name of the firmware, the protocol and this repository, and of Bela's touch-sensor product.
 
@@ -179,7 +179,7 @@ Practical notes, not a design:
 
 ## Verification
 
-These checks do not require building firmware from source. Use a published **application-only** UF2 from a [GitHub Release](https://github.com/nymble/trill/releases) and the Trillium app from the same release. The app can identify the board and install the firmware. Loading rules: [firmware-xiao-sense.md](../firmware-xiao-sense.md) and [test-kit.md](../test-kit.md).
+These checks do not require building firmware from source. Use a published **application-only** UF2 from a [GitHub Release](https://github.com/nymble/trillium/releases) and the Trillium app from the same release. The app can identify the board and install the firmware. Loading rules: [firmware-xiao-sense.md](../firmware-xiao-sense.md) and [test-kit.md](../test-kit.md).
 
 1. For T0, connect USB-C. `3V3` on pin 12 should be about 3.3 V. If you have added a Flex or a battery, the electrical checks in [Assembly](#assembly) should already have passed.
 2. Enter the UF2 bootloader: connect USB-C and double-press RESET quickly. A drive should appear. On some boards, including Omi DevKits, the volume name is `XIAO-SENSE`.

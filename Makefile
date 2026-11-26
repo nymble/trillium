@@ -1,4 +1,5 @@
-# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 # Host checks need only a Rust toolchain. Cross targets need the rustup target,
 # cargo-zigbuild and Zig (see docs/build.md). Firmware needs the
 # thumbv7em-none-eabihf target and python3 (see docs/firmware-xiao-sense.md).
@@ -109,7 +110,7 @@ dist:
 	  bin=target/$$t/release/trill; \
 	  [ -f $$bin ] || continue; \
 	  d=trill-$(VERSION)-$$t; mkdir -p $(DIST)/$$d; \
-	  cp $$bin LICENSE COMMERCIAL-LICENSE.md README.md $(DIST)/$$d/; \
+	  cp $$bin LICENSE LICENSE-COMMERCIAL.md README.md $(DIST)/$$d/; \
 	  tar -C $(DIST) -czf $(DIST)/$$d.tar.gz $$d; rm -rf $(DIST)/$$d; \
 	done
 	cd $(DIST) && sha256sum *.tar.gz > SHA256SUMS && cat SHA256SUMS

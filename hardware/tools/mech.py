@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 """Enclosure drawings (T1, F1p, F1w) and F1w laser-cut sheets."""
 
 from __future__ import annotations
@@ -305,7 +307,7 @@ def f1w_sheets(outdir):
 # Drawings
 # ======================================================================
 def title(s: Svg, x, y, w, h, name, scale, extra=()):
-    rows = [("Project", "Trillium hardware (nymble/trill)"), ("Part", name), ("Scale", scale),
+    rows = [("Project", "Trillium hardware (nymble/trillium)"), ("Part", name), ("Scale", scale),
             ("Revision", REV), ("Date", DATE), ("Units", "mm; general tolerance ±0.2 (print), ±0.1 (laser)")] + list(extra)
     s.title_block(x, y, w, h, rows, name)
 

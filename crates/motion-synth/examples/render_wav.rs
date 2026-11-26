@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Host demo: run the full control→audio pipeline on a scripted gesture and
 //! write a 16-bit mono WAV. Same code path as the firmware (416 Hz control,
 //! fixed audio blocks, mailbox at block boundaries).

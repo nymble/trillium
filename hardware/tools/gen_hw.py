@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 """Regenerate every Trillium hardware drawing, list and laser file.
 
     python3 hardware/tools/gen_hw.py          # from the repository root

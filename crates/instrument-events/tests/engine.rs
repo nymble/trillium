@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Scripted-gesture tests for the event engine.
 use instrument_events::engine::{CRITICAL_CAPACITY, NOTE_OFF_RESERVE};
 use instrument_events::midi::{cc, BEND_CENTER};

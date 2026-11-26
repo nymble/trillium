@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Instrument view (prototype): one screen with feedback and adjustment for
 // the handpan instrument. Strikes are detected in the app from telemetry

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 """Boot an iPad Simulator, install Trillium, and capture screenshots.
 
 Primary path: an XCUITest (`apple/UITests/SimulatorScreenshots.swift`) that

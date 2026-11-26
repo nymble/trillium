@@ -153,7 +153,7 @@ For production, a Plus board reflowed onto a carrier PCB removes pin headers, fr
 | Sneaky Gestures V2 (open-source BLE MIDI glove) | XIAO nRF52840 Sense | 12 conductive finger pads through a CD74HC4067 multiplexer, flex-sensor glissando, FSR aftertouch, two accelerometer CCs, 20 scales, 63 presets in flash, LED mode display, tap tempo and MIDI clock sync, stuck-note prevention. Built with PlatformIO on the Adafruit nRF52 core. | <https://github.com/sneak-thief/Sneaky-Gestures-V2> |
 | slim208 (high-density BLE MIDI controller, MIDI Innovation Awards entry) | XIAO ESP32-S3 Plus | 64 potentiometers and 144 switches read through 13 multiplexers, 208 MIDI CCs over BLE, 18650 battery rated at 35–40 hours, aimed at iPad modular synthesis. Handmade prototype. | <https://midi.org/innovation-award/slim208> |
 | XIAO MIDI Synthesizer (official Seeed gadget) | XIAO ESP32-C3 + SAM2695 synth chip | A MIDI sound module, not a BLE MIDI controller: the ESP32-C3 drives a SAM2695 General MIDI synthesizer over a 31250-baud serial link, with 64-voice polyphony, a speaker and headphone jack, four buttons and long-press mode switching (Sound Test, Beat Keeper, Multi-Track Play). Arduino library: Seeed_Arduino_MIDIMaster. | <https://wiki.seeedstudio.com/xiao_midi_synthesizer/> |
-| Trill (open-source motion instrument) | XIAO nRF52840 Sense | Class-compliant USB MIDI instrument using the onboard LSM6DS3TR-C IMU, with touch, tilt-to-scale, theremin-style pitch-bend and tap modes. BLE MIDI is planned but not yet implemented. | <https://github.com/nymble/trill> |
+| Trill (open-source motion instrument) | XIAO nRF52840 Sense | Class-compliant USB MIDI instrument using the onboard LSM6DS3TR-C IMU, with touch, tilt-to-scale, theremin-style pitch-bend and tap modes. BLE MIDI is planned but not yet implemented. | <https://github.com/nymble/trillium> |
 
 ## 7. Ranked recommendations
 
@@ -232,4 +232,4 @@ All accessed November 2026.
 - Seeed forum, XIAO MG24 versus nRF54L15 (RF switch current): <https://forum.seeedstudio.com/t/xiao-mg24-vs-nrf54l15-for-low-power-matter-zigbee-actuator/294608>
 - Sneaky Gestures V2: <https://github.com/sneak-thief/Sneaky-Gestures-V2>
 - slim208: <https://midi.org/innovation-award/slim208>
-- Trill: <https://github.com/nymble/trill>
+- Trill: <https://github.com/nymble/trillium>

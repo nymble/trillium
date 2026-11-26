@@ -1,9 +1,10 @@
 Trillium (companion app for the Trill instrument): unsigned development builds
 =============================================================================
 
-These files come from the CI workflow of https://github.com/nymble/trill.
-They are development builds, not releases. Licence: GPL-3.0-only (see the
-repository; commercial terms in COMMERCIAL-LICENSE.md).
+These files come from the CI workflow of https://github.com/nymble/trillium.
+They are development builds, not releases. Copyright (C) 2026 Paul Lambert.
+Licence: GPL-3.0-or-later (see the
+repository; commercial terms in LICENSE-COMMERCIAL.md).
 
 Trillium-macOS-<version>.dmg (GitHub Releases)
   The same universal macOS app in a disk image, with an Applications

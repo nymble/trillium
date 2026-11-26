@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Sensor-to-musical-event engine for the Trill instrument.
 //!
 //! * [`midi`]: MIDI 1.0 channel-voice messages, their wire bytes and the

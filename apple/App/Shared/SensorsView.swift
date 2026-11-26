@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Live sensor dashboard. Data comes only from the device's telemetry
 // stream (config port, firmware 0.3.0+). Charts are redrawn by the 30 Hz UI

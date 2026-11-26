@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // The microphone PCM port must be read in raw mode. Checked on a
 // pseudo-terminal, which has the same line discipline as a USB CDC port.

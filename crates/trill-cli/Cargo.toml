@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 [package]
 name = "trill-cli"
 description = "Linux command-line bring-up tool for Bela Trill sensors over /dev/i2c-N"
@@ -5,7 +7,6 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
-authors.workspace = true
 publish = false
 
 [[bin]]

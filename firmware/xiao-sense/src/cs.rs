@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Single-core critical section (PRIMASK) for builds without the
 //! SoftDevice. With `ble-midi`, nrf-softdevice provides the implementation
 //! instead: it masks application interrupts only, so the SoftDevice's

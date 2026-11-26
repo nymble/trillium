@@ -1,0 +1,19 @@
+version = 1
+
+# Files that cannot carry a comment header. Files with a header keep their own.
+[[annotations]]
+path = [
+  "**.md", "**.svg", "**.png", "**.icns", "**.json", "**.csv", "**.txt",
+  "**.plist", "**.entitlements", "**.example", "**.x", "**.gitignore", ".gitignore",
+  "Cargo.lock", "**/Cargo.lock", "**.xcassets/**", "**.appiconset/**",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Copyright (C) 2026 Paul Lambert"
+SPDX-License-Identifier = "GPL-3.0-or-later OR LicenseRef-Commercial"
+
+# The stock GNU GPL text keeps the Free Software Foundation's notice.
+[[annotations]]
+path = "LICENSE"
+precedence = "override"
+SPDX-FileCopyrightText = "2007 Free Software Foundation, Inc."
+SPDX-License-Identifier = "GPL-3.0-or-later"

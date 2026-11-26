@@ -2,7 +2,9 @@
 
 ## This project
 
-Copyright © 2026 Nymble ([@nymble](https://github.com/nymble)). Licensed under GPL-3.0-only; see [LICENSE](LICENSE) and [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md).
+Copyright (C) 2026 Paul Lambert (d/b/a M-of-N). Licensed under `GPL-3.0-or-later OR LicenseRef-Commercial`; see [LICENSE](LICENSE), [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) and [LICENSES/](LICENSES/). Contributions: [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Versions published before this change were offered under GPL-3.0-only. Those published copies keep the terms they were published under; this notice applies from the commit that introduces it.
 
 The wiring diagrams in `docs/images/` are original drawings created for this project.
 
@@ -32,3 +34,15 @@ Bela and Trill are trademarks of Augmented Instruments Ltd. XIAO and Seeed Studi
 ## Rust dependencies
 
 Third-party crates keep their own licences (mostly MIT/Apache-2.0); see `Cargo.lock`, `firmware/xiao-sense/Cargo.lock` and each crate's metadata. Run `cargo tree` to list them. Firmware binaries link permissively licensed crates only (MIT, Apache-2.0, BSD-3-Clause `nrf-pac`, Zlib, Unlicense). Anyone distributing a firmware binary must ship those notices with it.
+
+## Names and marks
+
+"Trillium", "Trillium Sense", "Trillium Zero", "Trillium Base" and the Rhodonea mark are names and marks of the copyright holder. They are not licensed by the GPL or by a commercial licence, which cover the code and content, not the names. You may say a build is based on this project, but a modified or redistributed build must not use these names or marks as its own product name or logo without permission. No trademark registration is claimed here.
+
+## Known exceptions and files not covered by the project licence
+
+- Bela Trill hardware designs, firmware, libraries and datasheets, Seeed Studio and Raspberry Pi documentation, Nordic documentation and the Nordic S140 SoftDevice keep their own licences and are not part of this repository (see above).
+- The Nordic SoftDevice binary is neither included in nor distributed with any release.
+- Third-party Rust crates keep their own licences; see `Cargo.lock` and `firmware/xiao-sense/Cargo.lock`.
+- Fonts (Outfit, Inter, IBM Plex Mono; SIL OFL 1.1) are not bundled in this repository; the wordmark letters are outlines made from Outfit.
+- `REUSE.toml` records the licence of files that cannot carry a header (images, JSON, CSV, Markdown, property lists, lock files).

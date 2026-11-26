@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Stage theme helpers built on the brand tokens (brand/tokens/TrilliumColors.swift,
 // see brand/BRAND.md). No colour values are defined here: every colour comes

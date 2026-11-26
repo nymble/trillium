@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 [workspace]
 resolver = "2"
 members = ["crates/trill-driver", "crates/trill-cli", "crates/lsm6ds3trc", "crates/motion-synth", "crates/status-led", "crates/instrument-events", "crates/trill-usb", "crates/trill-config", "crates/ble-midi", "crates/trill-board"]
@@ -6,9 +8,8 @@ exclude = ["firmware/xiao-sense"]
 [workspace.package]
 version = "0.8.0"
 edition = "2021"
-license = "GPL-3.0-only"
-repository = "https://github.com/nymble/trill"
-authors = ["Nymble (https://github.com/nymble)"]
+license = "GPL-3.0-or-later OR LicenseRef-Commercial"
+repository = "https://github.com/nymble/trillium"
 
 [profile.release]
 lto = true

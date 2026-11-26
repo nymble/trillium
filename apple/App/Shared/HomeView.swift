@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // First screen: what Trillium is, whether an instrument is plugged in, a
 // one-tap Connect, and once connected a plain description of the current

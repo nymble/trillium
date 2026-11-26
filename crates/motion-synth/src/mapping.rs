@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Gesture → synthesis parameter mapping (control rate).
 //!
 //! Default instrument: tilt forward/back (pitch) selects a note on a

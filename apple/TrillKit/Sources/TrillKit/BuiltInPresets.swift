@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Built-in presets, shown together with the user's saved presets. Choosing
 // one fills the editor and, when a device is connected, applies it (RAM only

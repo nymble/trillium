@@ -7,7 +7,7 @@ Naming: the app is **Trillium**; **Trill** is the Bela sensor (and the firmware,
 Hard rules:
 - No firmware flashing, publishing, tags, releases, merges, App Store Connect submissions or Apple account changes without the user's explicit approval for that specific step.
 - Never force-push or rewrite pushed history.
-- Keep GPL-3.0-only + commercial licensing; no incompatible or ambiguous third-party code.
+- Keep GPL-3.0-or-later + commercial licensing; no incompatible or ambiguous third-party code.
 - No credentials, team IDs, device serials or firmware backups in the repository.
 - Say exactly what was tested on hardware versus only in CI or simulation.
 

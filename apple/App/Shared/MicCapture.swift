@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Microphone test path: open the board's PCM CDC port, decode TRPC frames,
 // feed a live level/waveform chart, and (macOS only) play the signal

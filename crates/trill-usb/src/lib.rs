@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! USB device layout shared by the firmware and the host-side descriptor
 //! tests, so the tests check the exact descriptors the firmware sends.
 //!

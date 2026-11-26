@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
-// Copyright (C) 2026 Nymble (https://github.com/nymble)
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 
 //! Protocol tests against the byte sequences described in the Trill datasheet
 //! (Rev C v1.3, section 7). No hardware required.

@@ -26,7 +26,7 @@ Open hardware designs and Rust software for a motion and touch musical instrumen
 
 **Naming:** the app is **Trillium**. **Trill** is the Bela sensor, and also stays for the firmware (`xiao-sense-fw`), USB product string, protocol, Rust crates, `TrillKit`, internal Swift types, the preset format id and the repository. Bundle ID is `net.nymbus.trillium` (macOS, iOS and iPadOS; decided 2026-11-19; registered and linked to the Trillium Sense App Store Connect record).
 
-Licence: **GPL-3.0-only**, plus a separate commercial licence offer (`LICENSE`, `COMMERCIAL-LICENSE.md`, `NOTICE.md`). Keep that model; do not import incompatible or ambiguously licensed code.
+Licence: **GPL-3.0-or-later**, plus a separate commercial licence offer (`LICENSE`, `LICENSE-COMMERCIAL.md`, `NOTICE.md`). Keep that model; do not import incompatible or ambiguously licensed code.
 
 ## 3. Where things are
 

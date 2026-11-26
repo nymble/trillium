@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //! Print the protocol test vectors (protocol/config-v1-vectors.txt).
 //! Every vector is run through the full device path: USB-MIDI packets ->
 //! reassembly -> request handling -> reply. `make protocol-vectors`

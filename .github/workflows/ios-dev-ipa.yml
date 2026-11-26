@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 # Optional, untested. Manual dispatch only. Produces a development IPA when
 # the named repository secrets are present. The repository currently has no
 # signing certificates or profiles, and this workflow has never been run

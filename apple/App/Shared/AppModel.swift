@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: GPL-3.0-only
+// Copyright (C) 2026 Paul Lambert
+// SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 //
 // Main-actor state for the SwiftUI views. MIDI input is buffered off the
 // main thread (EventBuffer) and drained at a fixed UI rate, so a busy

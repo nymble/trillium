@@ -1,3 +1,5 @@
+# Copyright (C) 2026 Paul Lambert
+# SPDX-License-Identifier: GPL-3.0-or-later OR LicenseRef-Commercial
 """Derived mechanical geometry shared by the OpenSCAD sources and the drawings.
 
 The .scad files carry the same formulas so they stay editable on their own;
